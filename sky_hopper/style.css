@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #232526, #414345);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    transition: background 0.5s;
+    padding-bottom: env(safe-area-inset-bottom); 
+    
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #111; /* Match your game's background */
+}
+
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-over {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(30, 30, 30, 0.95);
+    color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+#game-over.hidden {
+    display: none;
+}
+
+#restart-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #ff4e50;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#restart-btn:hover {
+    background: #fc913a;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #232526;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+#dark-mode-toggle:hover {
+    background: #414345;
+}
+
+body.dark-mode {
+    background: linear-gradient(to bottom, #0f2027, #2c5364);
+}
+
+body.dark-mode #game-over {
+    background: rgba(10, 10, 10, 0.97);
+    color: #eee;
+}
+body.dark-mode #restart-btn {
+    background: #222;
+    color: #ff4e50;
+}
+body.dark-mode #restart-btn:hover {
+    background: #444;
+}
+body.dark-mode #dark-mode-toggle {
+    background: #111;
+    color: #ff4e50;
+}
+
+#start-btn {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    padding: 1.2rem 3rem;
+    font-size: 2rem;
+    background: #2ecc40;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#start-btn:hover {
+    background: #27ae60;
+}
+#start-btn.hidden {
+    display: none;
+}
+
+#flap-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 5.5rem;
+    margin-bottom: 0.5rem;
+    transform: translateX(-50%);
+    z-index: 20;
+    padding: 1.2rem 3.5rem;
+    font-size: 2rem;
+    background: #ff4e50;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: background 0.3s;
+    display: none;
+    /* padding-bottom: env(safe-area-inset-bottom);  */
+}
+#flap-btn:active {
+    background: #fc913a;
+}
+@media (max-width: 700px) {
+    #flap-btn {
+        display: block;
+    }
+}
